@@ -4,6 +4,7 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 const { sequelize } = require('./models');
+const { ensureDatabase } = require('../database/init');
 const authRoutes = require('./routes/authRoutes');
 const offerRoutes = require('./routes/offerRoutes');
 const notificationRoutes = require('./routes/notificationRoutes');
@@ -35,6 +36,7 @@ app.use(errorHandler);
 
 async function start() {
   try {
+    ensureDatabase();
     await sequelize.authenticate();
     console.log('Database connection established.');
     app.listen(PORT, () => {

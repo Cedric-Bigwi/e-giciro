@@ -8,12 +8,14 @@ Express + Sequelize (SQLite) API for the e-Giciro price-comparison platform.
 cd backend
 npm install
 cp .env.example .env
-npm run setup      # runs migrations then seeders
 npm run dev        # starts the API on http://localhost:5000
 ```
 
-The SQLite file is created automatically at `database/e_giciro.sqlite` the
-first time migrations run.
+No separate migrate/seed step needed — the first time the server starts,
+`database/init.js` automatically creates `database/e_giciro.sqlite`, runs
+every migration, and seeds demo data. On later restarts it only applies any
+new migrations and leaves existing data alone. Run `node database/init.js`
+directly if you want to trigger this without starting the full server.
 
 ## Seeded accounts
 

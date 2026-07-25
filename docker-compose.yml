@@ -16,7 +16,7 @@ services:
       - CLIENT_ORIGIN=http://localhost:5173
     volumes:
       - backend-db:/app/database
-    command: sh -c "npm run setup && npm start"
+    command: npm start
 
   frontend:
     build:
