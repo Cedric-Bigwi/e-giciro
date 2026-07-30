@@ -3,34 +3,15 @@ import { Link } from 'react-router-dom';
 import api from '../utils/api';
 
 const STEPS = [
-  {
-    title: 'Post or browse an offer',
-    body: 'Shop owners, wholesalers, and manufacturers list what they are buying or selling. Consumers browse offers near them.'
-  },
-  {
-    title: 'Compare prices across districts',
-    body: 'See how the same product is priced in Kigali, Musanze, Huye, and every other district, side by side.'
-  },
-  {
-    title: 'Connect and transact',
-    body: 'Reach out directly using the contact details on an offer, and get notified when a matching offer appears.'
-  }
+  { title: 'Post an offer', body: 'List what you\u2019re buying or selling.' },
+  { title: 'Compare prices', body: 'See prices across every district.' },
+  { title: 'Connect', body: 'Reach out and get notified on matches.' }
 ];
 
 const TESTIMONIALS = [
-  {
-    quote:
-      'I used to drive to three different markets just to check sugar prices. Now I check e-Giciro before I leave home.',
-    name: 'Consumer, Kigali'
-  },
-  {
-    quote: 'Posting our wholesale rice prices here brought us buyers from districts we never used to reach.',
-    name: 'Wholesaler, Huye'
-  },
-  {
-    quote: 'The notifications tell me the moment someone nearby is looking for what I sell.',
-    name: 'Shop owner, Musanze'
-  }
+  { quote: 'I check e-Giciro before I leave home now.', name: 'Consumer, Kigali' },
+  { quote: 'Brought us buyers from districts we never reached.', name: 'Wholesaler, Huye' },
+  { quote: 'I get notified the moment a buyer is nearby.', name: 'Shop owner, Musanze' }
 ];
 
 export default function LandingPage() {
@@ -61,8 +42,7 @@ export default function LandingPage() {
               Bringing Price Transparency to Rwanda&apos;s Markets
             </h1>
             <p className="mt-5 text-lg text-white/80 max-w-xl">
-              e-Giciro connects consumers, shop owners, wholesalers, and manufacturers around real-time,
-              location-aware prices — so no one overpays and no one undersells.
+              Real-time prices, wherever you are.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/register" className="btn-secondary !px-6 !py-3 !text-base">
@@ -84,10 +64,7 @@ export default function LandingPage() {
 
       {/* How it works */}
       <section className="container-page py-20">
-        <h2 className="text-2xl sm:text-3xl font-extrabold text-center">How e-Giciro works</h2>
-        <p className="mt-3 text-center text-ink/50 max-w-xl mx-auto">
-          A simple, three-step loop that keeps prices honest and markets efficient.
-        </p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold text-center">How it works</h2>
 
         <div className="mt-12 grid sm:grid-cols-3 gap-6">
           {STEPS.map((step, i) => (
@@ -117,8 +94,7 @@ export default function LandingPage() {
 
       {/* CTA */}
       <section className="container-page py-20 text-center">
-        <h2 className="text-2xl sm:text-3xl font-extrabold">Ready to see real prices, right now?</h2>
-        <p className="mt-3 text-ink/50">Join in under a minute — no fees, no middlemen.</p>
+        <h2 className="text-2xl sm:text-3xl font-extrabold">Ready to see real prices?</h2>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link to="/register" className="btn-primary !px-6 !py-3 !text-base">
             Create your account

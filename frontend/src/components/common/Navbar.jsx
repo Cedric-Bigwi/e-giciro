@@ -19,14 +19,21 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 border-b border-black/5 bg-white/90 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 text-sm font-extrabold text-white">
-            eG
-          </span>
-          <span className="text-lg font-extrabold tracking-tight">
-            e-Giciro
-          </span>
-        </Link>
+        {user ? (
+          <div className="flex items-center gap-2 cursor-default select-none">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 text-sm font-extrabold text-white">
+              eG
+            </span>
+            <span className="text-lg font-extrabold tracking-tight">e-Giciro</span>
+          </div>
+        ) : (
+          <Link to="/" className="flex items-center gap-2">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary-600 text-sm font-extrabold text-white">
+              eG
+            </span>
+            <span className="text-lg font-extrabold tracking-tight">e-Giciro</span>
+          </Link>
+        )}
 
         <nav className="hidden md:flex items-center gap-6">
           <NavLink to="/offers" className={navLinkClass}>
